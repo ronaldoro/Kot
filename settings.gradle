@@ -1,0 +1,2 @@
+rootProject.name='TestKotProj'
+include ':app'
