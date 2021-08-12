@@ -1,5 +1,6 @@
 package com.example.testkotproj
 
+import com.example.testkotproj.Hash.GroupAnagrams
 import com.example.testkotproj.Sort.CanReorderDoubled
 import io.kotlintest.matchers.numerics.shouldBeLessThan
 import io.kotlintest.shouldBe
@@ -18,14 +19,17 @@ class MemoryMoniterUnitTest : StringSpec() {
 
     val testCase_Int_Array: IntArray = intArrayOf(4,-2,2,-4)
 
+    var testCase_String_Array: Array<String> = arrayOf("eat","tea","tan","ate","nat","bat")
+    val string2DArray: Array<Array<String>> = arrayOf(
+        arrayOf("bat"),
+        arrayOf("tan","nat"),
+        arrayOf("eat","tea","ate")
+    )
 
     init {
-        val Algo: CanReorderDoubled = CanReorderDoubled();
+        val Algo: GroupAnagrams = GroupAnagrams();
         "Algorithm Test" {
-            Algo.canReorderDoubled(testCase_Int_Array) shouldBe true;
-            Algo.canReorderDoubled(intArrayOf(-5, -2)) shouldBe false;
-            Algo.canReorderDoubled(intArrayOf(2,1,2,6)) shouldBe false;
-            Algo.canReorderDoubled(intArrayOf(1,2,4,16,8,4)) shouldBe false;
+            Algo.groupAnagrams(testCase_String_Array) shouldBe string2DArray;
         }
     }
 }
