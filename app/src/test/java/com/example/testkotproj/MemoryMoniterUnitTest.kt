@@ -1,6 +1,7 @@
 package com.example.testkotproj
 
 import com.example.testkotproj.Hash.GroupAnagrams
+import com.example.testkotproj.Hash.SetZeroes
 import com.example.testkotproj.Sort.CanReorderDoubled
 import io.kotlintest.matchers.numerics.shouldBeLessThan
 import io.kotlintest.shouldBe
@@ -11,11 +12,9 @@ import org.junit.Test
 
 class MemoryMoniterUnitTest : StringSpec() {
     val testCase_2D_Int_Array: Array<IntArray> = arrayOf(
-        intArrayOf(0,0,0,0,0),
-        intArrayOf(0,0,1,0,3),
-        intArrayOf(0,2,5,0,1),
-        intArrayOf(4,2,4,4,2),
-        intArrayOf(3,5,1,3,1))
+        intArrayOf(0,1,2,0),
+        intArrayOf(3,4,5,2),
+        intArrayOf(1,3,1,5))
 
     val testCase_Int_Array: IntArray = intArrayOf(4,-2,2,-4)
 
@@ -27,9 +26,9 @@ class MemoryMoniterUnitTest : StringSpec() {
     )
 
     init {
-        val Algo: GroupAnagrams = GroupAnagrams();
+        val Algo: SetZeroes = SetZeroes();
         "Algorithm Test" {
-            Algo.groupAnagrams(testCase_String_Array) shouldBe string2DArray;
+            Algo.setZeroes(testCase_2D_Int_Array) shouldBe string2DArray;
         }
     }
 }
