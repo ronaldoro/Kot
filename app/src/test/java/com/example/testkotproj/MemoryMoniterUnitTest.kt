@@ -1,8 +1,8 @@
 package com.example.testkotproj
 
-import com.example.testkotproj.Hash.GroupAnagrams
-import com.example.testkotproj.Hash.SetZeroes
-import com.example.testkotproj.Sort.CanReorderDoubled
+import com.example.testkotproj.Test.AlgorithmTest
+import com.example.testkotproj.Test.AlgorithmTest2
+import com.example.testkotproj.TwoPointer.MinWindow
 import io.kotlintest.matchers.numerics.shouldBeLessThan
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
@@ -11,24 +11,27 @@ import org.junit.Test
 
 
 class MemoryMoniterUnitTest : StringSpec() {
-    val testCase_2D_Int_Array: Array<IntArray> = arrayOf(
-        intArrayOf(0,1,2,0),
-        intArrayOf(3,4,5,2),
-        intArrayOf(1,3,1,5))
+    //val testCase_2D_Int_Array: Array<String> = arrayOf(
+    //    intArrayOf(0,1,2,0),
+    //    intArrayOf(3,4,5,2),
+    //    intArrayOf(1,3,1,5))
 
-    val testCase_Int_Array: IntArray = intArrayOf(4,-2,2,-4)
+    val testCase_Int_Array: IntArray = intArrayOf(3,1,2)
 
-    var testCase_String_Array: Array<String> = arrayOf("eat","tea","tan","ate","nat","bat")
+    var testCase_String_Array: Array<String> = arrayOf("김토스,20010729"
+    )
     val string2DArray: Array<Array<String>> = arrayOf(
-        arrayOf("bat"),
-        arrayOf("tan","nat"),
-        arrayOf("eat","tea","ate")
+        arrayOf("1 2 3 4 5 6 7 8"),
+        arrayOf("2 11"),
+        arrayOf("0 11 10"),
+        arrayOf("3 17 19 12 13 9 14 15 10"),
+        arrayOf("20 2 21")
     )
 
     init {
-        val Algo: SetZeroes = SetZeroes();
+        val Algo: MinWindow = MinWindow();
         "Algorithm Test" {
-            Algo.setZeroes(testCase_2D_Int_Array) shouldBe string2DArray;
+            Algo.minWindow("a", "aa") shouldBe "";
         }
     }
 }
