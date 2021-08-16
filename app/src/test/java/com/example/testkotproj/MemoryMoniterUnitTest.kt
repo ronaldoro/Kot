@@ -1,5 +1,6 @@
 package com.example.testkotproj
 
+import com.example.testkotproj.PrefixSum.NumArray
 import com.example.testkotproj.Test.AlgorithmTest
 import com.example.testkotproj.Test.AlgorithmTest2
 import com.example.testkotproj.TwoPointer.MinWindow
@@ -29,9 +30,11 @@ class MemoryMoniterUnitTest : StringSpec() {
     )
 
     init {
-        val Algo: MinWindow = MinWindow();
+        val Algo: NumArray = NumArray(intArrayOf(-2, 0, 3, -5, 2, -1));
         "Algorithm Test" {
-            Algo.minWindow("a", "aa") shouldBe "";
+            Algo.sumRange(0, 2) shouldBe 1;
+            Algo.sumRange(2, 5) shouldBe -1;
+            Algo.sumRange(0, 5) shouldBe -3;
         }
     }
 }
