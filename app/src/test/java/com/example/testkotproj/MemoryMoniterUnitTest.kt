@@ -1,5 +1,7 @@
 package com.example.testkotproj
 
+import com.example.testkotproj.DFS.GoodNodes
+import com.example.testkotproj.DFS.TreeNode
 import com.example.testkotproj.PrefixSum.NumArray
 import com.example.testkotproj.Test.AlgorithmTest
 import com.example.testkotproj.Test.AlgorithmTest2
@@ -30,11 +32,24 @@ class MemoryMoniterUnitTest : StringSpec() {
     )
 
     init {
-        val Algo: NumArray = NumArray(intArrayOf(-2, 0, 3, -5, 2, -1));
+        var root : TreeNode = TreeNode(3)
+        var node1 : TreeNode = TreeNode(1)
+        var node2 : TreeNode = TreeNode(4)
+
+        root.left = node1
+        root.right = node2
+
+        var node3 : TreeNode = TreeNode(3)
+        var node4 : TreeNode = TreeNode(1)
+        var node5 : TreeNode = TreeNode(5)
+
+        node1.left = node3
+        node2.left = node4
+        node2.right = node5
+
+        val Algo: GoodNodes = GoodNodes();
         "Algorithm Test" {
-            Algo.sumRange(0, 2) shouldBe 1;
-            Algo.sumRange(2, 5) shouldBe -1;
-            Algo.sumRange(0, 5) shouldBe -3;
+            Algo.goodNodes(root) shouldBe 4;
         }
     }
 }
